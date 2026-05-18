@@ -1,0 +1,186 @@
+[
+  {
+    "question_text": "Какое направление тебе кажется наиболее интересным?",
+    "question_type": "single_choice",
+    "order": 0,
+    "options": [
+      {
+        "text": "Создание сайтов и интерфейсов — мне нравится, когда мою работу видно",
+        "weights": {"frontend": 10, "ux_ui": 8, "backend": 2, "qa": 1, "data_science": 1, "devops": 1, "analyst": 2, "pm": 3}
+      },
+      {
+        "text": "Работа с данными и алгоритмами — люблю разбираться в сложном",
+        "weights": {"backend": 8, "data_science": 10, "devops": 3, "analyst": 7, "frontend": 1, "qa": 2, "ux_ui": 1, "pm": 2}
+      },
+      {
+        "text": "Настройка серверов и автоматизация — нравится, когда всё работает само",
+        "weights": {"devops": 10, "backend": 5, "qa": 2, "data_science": 2, "frontend": 1, "ux_ui": 1, "analyst": 2, "pm": 1}
+      },
+      {
+        "text": "Тестирование и поиск багов — люблю находить ошибки",
+        "weights": {"qa": 10, "analyst": 4, "backend": 2, "frontend": 2, "devops": 3, "data_science": 1, "ux_ui": 1, "pm": 2}
+      }
+    ]
+  },
+  {
+    "question_text": "Какой у тебя уровень навыков программирования?",
+    "question_type": "single_choice",
+    "order": 1,
+    "options": [
+      {
+        "text": "Совсем новичок — никогда не писал код",
+        "weights": {"frontend": 4, "ux_ui": 8, "qa": 6, "analyst": 5, "pm": 7, "backend": 2, "data_science": 1, "devops": 1}
+      },
+      {
+        "text": "Начальный уровень — знаю основы одного языка",
+        "weights": {"frontend": 8, "backend": 7, "qa": 7, "data_science": 5, "devops": 3, "ux_ui": 4, "analyst": 5, "pm": 4}
+      },
+      {
+        "text": "Средний уровень — могу написать небольшое приложение",
+        "weights": {"backend": 9, "frontend": 8, "data_science": 8, "devops": 7, "qa": 6, "analyst": 6, "ux_ui": 3, "pm": 3}
+      },
+      {
+        "text": "Продвинутый — работал над реальными проектами",
+        "weights": {"backend": 8, "data_science": 9, "devops": 9, "frontend": 7, "qa": 5, "analyst": 5, "ux_ui": 2, "pm": 4}
+      }
+    ]
+  },
+  {
+    "question_text": "Что для тебя важнее всего в работе?",
+    "question_type": "single_choice",
+    "order": 2,
+    "options": [
+      {
+        "text": "Креативность и возможность влиять на внешний вид продукта",
+        "weights": {"ux_ui": 10, "frontend": 8, "pm": 4, "analyst": 2, "backend": 1, "data_science": 1, "devops": 1, "qa": 2}
+      },
+      {
+        "text": "Логика, структура и надёжность",
+        "weights": {"backend": 9, "qa": 8, "analyst": 8, "data_science": 7, "devops": 6, "frontend": 3, "ux_ui": 1, "pm": 3}
+      },
+      {
+        "text": "Карьерный рост и высокая зарплата",
+        "weights": {"backend": 7, "data_science": 8, "devops": 8, "pm": 7, "frontend": 6, "qa": 4, "analyst": 5, "ux_ui": 4}
+      },
+      {
+        "text": "Работа с людьми и управление процессами",
+        "weights": {"pm": 10, "analyst": 7, "qa": 3, "frontend": 3, "backend": 2, "ux_ui": 4, "data_science": 2, "devops": 2}
+      }
+    ]
+  },
+  {
+    "question_text": "Какой предмет в учёбе тебе давался легче всего?",
+    "question_type": "single_choice",
+    "order": 3,
+    "options": [
+      {
+        "text": "Математика и информатика",
+        "weights": {"backend": 8, "data_science": 10, "devops": 6, "analyst": 7, "frontend": 3, "qa": 4, "ux_ui": 1, "pm": 2}
+      },
+      {
+        "text": "Рисование и дизайн",
+        "weights": {"ux_ui": 10, "frontend": 7, "pm": 3, "analyst": 2, "qa": 1, "backend": 1, "data_science": 1, "devops": 1}
+      },
+      {
+        "text": "Иностранный язык и литература",
+        "weights": {"pm": 7, "analyst": 6, "ux_ui": 5, "frontend": 4, "qa": 3, "backend": 2, "data_science": 1, "devops": 1}
+      },
+      {
+        "text": "Физкультура и труд — любил практические занятия",
+        "weights": {"devops": 6, "qa": 5, "frontend": 5, "backend": 4, "ux_ui": 3, "analyst": 2, "data_science": 1, "pm": 3}
+      }
+    ]
+  },
+  {
+    "question_text": "Как ты предпочитаешь работать в команде?",
+    "question_type": "single_choice",
+    "order": 4,
+    "options": [
+      {
+        "text": "Люблю быть в центре — организовывать и направлять",
+        "weights": {"pm": 10, "analyst": 6, "frontend": 4, "backend": 3, "ux_ui": 4, "qa": 3, "devops": 3, "data_science": 2}
+      },
+      {
+        "text": "Предпочитаю работать самостоятельно над своей задачей",
+        "weights": {"backend": 8, "data_science": 8, "devops": 7, "frontend": 6, "qa": 6, "ux_ui": 5, "analyst": 4, "pm": 1}
+      },
+      {
+        "text": "Люблю обсуждать и договариваться с людьми",
+        "weights": {"analyst": 9, "pm": 8, "ux_ui": 6, "qa": 5, "frontend": 4, "backend": 3, "data_science": 3, "devops": 3}
+      },
+      {
+        "text": "Мне всё равно — делаю что скажут",
+        "weights": {"qa": 5, "frontend": 4, "backend": 3, "ux_ui": 3, "devops": 3, "analyst": 2, "data_science": 2, "pm": 1}
+      }
+    ]
+  },
+  {
+    "question_text": "Какая рабочая обстановка тебе ближе?",
+    "question_type": "single_choice",
+    "order": 5,
+    "options": [
+      {
+        "text": "Офис с живым общением и командными активностями",
+        "weights": {"pm": 8, "analyst": 7, "ux_ui": 6, "qa": 5, "frontend": 5, "backend": 3, "devops": 2, "data_science": 2}
+      },
+      {
+        "text": "Удалёнка — лишь бы был интернет и ноутбук",
+        "weights": {"backend": 8, "frontend": 7, "data_science": 7, "devops": 8, "qa": 6, "ux_ui": 5, "analyst": 4, "pm": 3}
+      },
+      {
+        "text": "Гибрид — иногда офис, иногда дома",
+        "weights": {"frontend": 7, "backend": 6, "data_science": 6, "devops": 5, "qa": 6, "analyst": 6, "ux_ui": 6, "pm": 6}
+      }
+    ]
+  },
+  {
+    "question_text": "Оцени свой интерес к анализу данных и цифрам от 1 до 5",
+    "question_type": "scale",
+    "order": 6,
+    "options": [
+      {
+        "text": "1 — совсем не люблю",
+        "weights": {"frontend": 5, "ux_ui": 5, "pm": 4, "qa": 2, "backend": 1, "data_science": 1, "devops": 1, "analyst": 1}
+      },
+      {
+        "text": "2 — скорее не люблю",
+        "weights": {"frontend": 6, "ux_ui": 6, "pm": 5, "qa": 3, "backend": 2, "data_science": 1, "devops": 2, "analyst": 2}
+      },
+      {
+        "text": "3 — нейтрально",
+        "weights": {"frontend": 5, "ux_ui": 4, "pm": 6, "qa": 5, "backend": 5, "data_science": 4, "devops": 4, "analyst": 5}
+      },
+      {
+        "text": "4 — скорее люблю",
+        "weights": {"backend": 8, "data_science": 8, "devops": 7, "analyst": 8, "qa": 6, "frontend": 3, "pm": 5, "ux_ui": 2}
+      },
+      {
+        "text": "5 — обожаю работать с цифрами",
+        "weights": {"data_science": 10, "backend": 9, "analyst": 9, "devops": 7, "qa": 5, "pm": 4, "frontend": 2, "ux_ui": 1}
+      }
+    ]
+  },
+  {
+    "question_text": "Какой тип задач тебя вдохновляет больше всего?",
+    "question_type": "single_choice",
+    "order": 7,
+    "options": [
+      {
+        "text": "Создавать что-то новое с нуля",
+        "weights": {"frontend": 8, "backend": 7, "data_science": 6, "ux_ui": 9, "devops": 5, "pm": 6, "qa": 2, "analyst": 3}
+      },
+      {
+        "text": "Улучшать и оптимизировать существующее",
+        "weights": {"devops": 9, "qa": 8, "backend": 7, "analyst": 6, "data_science": 6, "frontend": 4, "pm": 4, "ux_ui": 3}
+      },
+      {
+        "text": "Исследовать и находить закономерности",
+        "weights": {"data_science": 10, "analyst": 9, "backend": 5, "qa": 5, "devops": 4, "pm": 4, "frontend": 2, "ux_ui": 2}
+      },
+      {
+        "text": "Координировать людей и процессы",
+        "weights": {"pm": 10, "analyst": 7, "ux_ui": 4, "qa": 3, "frontend": 3, "backend": 2, "devops": 2, "data_science": 1}
+      }
+    ]
+  }
+]

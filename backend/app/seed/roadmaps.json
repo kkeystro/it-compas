@@ -1,0 +1,409 @@
+[
+  {
+    "profession_id": "frontend",
+    "stages": [
+      {
+        "title": "Месяцы 1–3: Основы фронтенда",
+        "description": "Изучаем HTML, CSS и JavaScript",
+        "order": 0,
+        "steps": [
+          {
+            "title": "HTML: семантическая верстка, формы, таблицы",
+            "step_type": "theory",
+            "resources": [{"title": "HTML Academy", "url": "https://htmlacademy.ru"}, {"title": "MDN Web Docs", "url": "https://developer.mozilla.org/ru/docs/Web/HTML"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "CSS: селекторы, flexbox, grid, анимации",
+            "step_type": "theory",
+            "resources": [{"title": "CSS Tricks", "url": "https://css-tricks.com"}, {"title": "Справочник CSS", "url": "https://html5book.ru/css-css3/"}],
+            "estimated_hours": 30,
+            "order": 1
+          },
+          {
+            "title": "JavaScript: синтаксис, DOM, события, fetch",
+            "step_type": "theory",
+            "resources": [{"title": "JavaScript.info", "url": "https://learn.javascript.ru"}, {"title": "FreeCodeCamp JS", "url": "https://www.freecodecamp.org/learn"}],
+            "estimated_hours": 50,
+            "order": 2
+          },
+          {
+            "title": "Верстка первого макета (Pet-project)",
+            "step_type": "practice",
+            "resources": [{"title": "Figma для разработчика", "url": "https://www.figma.com"}],
+            "estimated_hours": 20,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 4–6: Фреймворки и инструменты",
+        "description": "React, система сборки, TypeScript",
+        "order": 1,
+        "steps": [
+          {
+            "title": "Git: ветки, PR, работа в команде",
+            "step_type": "practice",
+            "resources": [{"title": "Git How To", "url": "https://githowto.com"}, {"title": "Learn Git Branching", "url": "https://learngitbranching.js.org"}],
+            "estimated_hours": 15,
+            "order": 0
+          },
+          {
+            "title": "React: компоненты, state, props, hooks",
+            "step_type": "theory",
+            "resources": [{"title": "React Docs", "url": "https://react.dev"}, {"title": "Курс React на YouTube", "url": "https://www.youtube.com"}],
+            "estimated_hours": 40,
+            "order": 1
+          },
+          {
+            "title": "TypeScript: типы, интерфейсы, дженерики",
+            "step_type": "theory",
+            "resources": [{"title": "TypeScript Handbook", "url": "https://www.typescriptlang.org/docs/handbook/"}],
+            "estimated_hours": 20,
+            "order": 2
+          },
+          {
+            "title": "Сборка: Webpack/Vite, npm/yarn",
+            "step_type": "practice",
+            "resources": [{"title": "Vite Guide", "url": "https://vitejs.dev/guide"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 7–9: Углубление",
+        "description": "Роутинг, стейт-менеджмент, тестирование",
+        "order": 2,
+        "steps": [
+          {
+            "title": "React Router, Redux/Zustand",
+            "step_type": "theory",
+            "resources": [{"title": "React Router Docs", "url": "https://reactrouter.com"}, {"title": "Zustand", "url": "https://github.com/pmndrs/zustand"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "REST API и работа с бэкендом",
+            "step_type": "practice",
+            "resources": [{"title": "SWR", "url": "https://swr.vercel.app"}, {"title": "React Query", "url": "https://tanstack.com/query/latest"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "Тестирование: Jest, React Testing Library",
+            "step_type": "theory",
+            "resources": [{"title": "Testing Library", "url": "https://testing-library.com"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Pet-project: интернет-магазин или todo-приложение",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 30,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 10–12: Выход на рынок",
+        "description": "Портфолио, резюме, стажировки",
+        "order": 3,
+        "steps": [
+          {
+            "title": "Собрать портфолио на GitHub",
+            "step_type": "milestone",
+            "resources": [],
+            "estimated_hours": 0,
+            "order": 0
+          },
+          {
+            "title": "Написать резюме и оформить LinkedIn",
+            "step_type": "job_search",
+            "resources": [{"title": "Хабр Карьера", "url": "https://career.habr.com"}, {"title": "LinkedIn", "url": "https://linkedin.com"}],
+            "estimated_hours": 5,
+            "order": 1
+          },
+          {
+            "title": "Участвовать в хакатоне (например, Яндекс.Лицей)",
+            "step_type": "hackathon",
+            "resources": [{"title": "Хакатоны на Habr", "url": "https://habr.com/ru/hubs/hackathons/"}],
+            "estimated_hours": 48,
+            "order": 2
+          },
+          {
+            "title": "Отправить резюме в 20+ компаний",
+            "step_type": "job_search",
+            "resources": [{"title": "Список IT-компаний для стажёров", "url": "https://github.com/avito-tech/start"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profession_id": "backend",
+    "stages": [
+      {
+        "title": "Месяцы 1–3: Основы",
+        "description": "Python, Git, алгоритмы",
+        "order": 0,
+        "steps": [
+          {
+            "title": "Python: синтаксис, типы данных, функции, ООП",
+            "step_type": "theory",
+            "resources": [{"title": "Learn Python", "url": "https://www.learnpython.org"}, {"title": "Python Tutorial", "url": "https://docs.python.org/3/tutorial/"}],
+            "estimated_hours": 40,
+            "order": 0
+          },
+          {
+            "title": "Git: основы, ветки, работа с репозиторием",
+            "step_type": "practice",
+            "resources": [{"title": "Git How To", "url": "https://githowto.com"}],
+            "estimated_hours": 10,
+            "order": 1
+          },
+          {
+            "title": "Алгоритмы и структуры данных",
+            "step_type": "theory",
+            "resources": [{"title": "LeetCode", "url": "https://leetcode.com"}, {"title": "Книга «Грокаем алгоритмы»", "url": "https://www.ozon.ru/"}],
+            "estimated_hours": 30,
+            "order": 2
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 4–6: Базы данных и API",
+        "description": "SQL, REST, первый проект",
+        "order": 1,
+        "steps": [
+          {
+            "title": "SQL и базы данных (PostgreSQL)",
+            "step_type": "theory",
+            "resources": [{"title": "PostgreSQL Tutorial", "url": "https://www.postgresqltutorial.com"}, {"title": "SQL Exercises", "url": "https://sql-ex.ru"}],
+            "estimated_hours": 25,
+            "order": 0
+          },
+          {
+            "title": "FastAPI: роутеры, Pydantic, зависимые инъекции",
+            "step_type": "theory",
+            "resources": [{"title": "FastAPI Docs", "url": "https://fastapi.tiangolo.com"}],
+            "estimated_hours": 25,
+            "order": 1
+          },
+          {
+            "title": "REST API: дизайн эндпоинтов, CRUD",
+            "step_type": "practice",
+            "resources": [{"title": "REST API Tutorial", "url": "https://restapitutorial.com"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Pet-project: API для заметок или блога",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 25,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 7–9: Docker и архитектура",
+        "description": "Контейнеризация, тестирование, аутентификация",
+        "order": 2,
+        "steps": [
+          {
+            "title": "Docker: образы, контейнеры, docker-compose",
+            "step_type": "theory",
+            "resources": [{"title": "Docker Get Started", "url": "https://docs.docker.com/get-started"}],
+            "estimated_hours": 15,
+            "order": 0
+          },
+          {
+            "title": "Тестирование: pytest, unittest, моки",
+            "step_type": "theory",
+            "resources": [{"title": "pytest Docs", "url": "https://docs.pytest.org"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "Аутентификация: JWT, OAuth2",
+            "step_type": "theory",
+            "resources": [{"title": "JWT.io", "url": "https://jwt.io"}, {"title": "FastAPI Security", "url": "https://fastapi.tiangolo.com/tutorial/security/"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Pet-project: Telegram-бот или API с авторизацией",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 30,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 10–12: Выход на рынок",
+        "description": "Портфолио, собеседования, стажировки",
+        "order": 3,
+        "steps": [
+          {
+            "title": "Собрать портфолио на GitHub",
+            "step_type": "milestone",
+            "resources": [],
+            "estimated_hours": 0,
+            "order": 0
+          },
+          {
+            "title": "Подготовка к собеседованиям: алгосы, system design",
+            "step_type": "job_search",
+            "resources": [{"title": "System Design Interview", "url": "https://github.com/donnemartin/system-design-primer"}],
+            "estimated_hours": 20,
+            "order": 1
+          },
+          {
+            "title": "Хакатон или опенсорс-контрибьюция",
+            "step_type": "hackathon",
+            "resources": [{"title": "GitHub Explore", "url": "https://github.com/explore"}],
+            "estimated_hours": 30,
+            "order": 2
+          },
+          {
+            "title": "Отправить резюме на стажировки в крупные компании",
+            "step_type": "job_search",
+            "resources": [{"title": "Яндекс Стажировки", "url": "https://yandex.ru/yaintern"}, {"title": "Тинькофф Стажировка", "url": "https://fintech.tinkoff.ru/start/"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profession_id": "data_science",
+    "stages": [
+      {
+        "title": "Месяцы 1–3: Основы математики и Python",
+        "description": "Python, статистика, линейная алгебра",
+        "order": 0,
+        "steps": [
+          {
+            "title": "Python для анализа данных: pandas, numpy",
+            "step_type": "theory",
+            "resources": [{"title": "Kaggle Learn Python", "url": "https://www.kaggle.com/learn/python"}],
+            "estimated_hours": 30,
+            "order": 0
+          },
+          {
+            "title": "Статистика: описательная, корреляция, гипотезы",
+            "step_type": "theory",
+            "resources": [{"title": "Khan Academy Statistics", "url": "https://www.khanacademy.org/math/statistics-probability"}],
+            "estimated_hours": 25,
+            "order": 1
+          },
+          {
+            "title": "Линейная алгебра: матрицы, векторы, преобразования",
+            "step_type": "theory",
+            "resources": [{"title": "3Blue1Brown Linear Algebra", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"}],
+            "estimated_hours": 20,
+            "order": 2
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 4–6: ML-фундамент",
+        "description": "Scikit-learn, модели, Kaggle",
+        "order": 1,
+        "steps": [
+          {
+            "title": "Scikit-learn: линейные модели, деревья, ансамбли",
+            "step_type": "theory",
+            "resources": [{"title": "Scikit-learn Docs", "url": "https://scikit-learn.org/stable/"}],
+            "estimated_hours": 30,
+            "order": 0
+          },
+          {
+            "title": "Визуализация данных: matplotlib, seaborn, plotly",
+            "step_type": "practice",
+            "resources": [{"title": "Kaggle Data Visualization", "url": "https://www.kaggle.com/learn/data-visualization"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "Kaggle: участие в соревновании Titanic или House Prices",
+            "step_type": "practice",
+            "resources": [{"title": "Kaggle Competitions", "url": "https://www.kaggle.com/competitions"}],
+            "estimated_hours": 20,
+            "order": 2
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 7–9: Deep Learning",
+        "description": "Нейросети, NLP, компьютерное зрение",
+        "order": 2,
+        "steps": [
+          {
+            "title": "TensorFlow / PyTorch: основы нейросетей",
+            "step_type": "theory",
+            "resources": [{"title": "PyTorch Tutorials", "url": "https://pytorch.org/tutorials/"}],
+            "estimated_hours": 30,
+            "order": 0
+          },
+          {
+            "title": "NLP: токенизация, эмбеддинги, трансформеры",
+            "step_type": "theory",
+            "resources": [{"title": "Hugging Face Course", "url": "https://huggingface.co/learn/nlp-course"}],
+            "estimated_hours": 25,
+            "order": 1
+          },
+          {
+            "title": "Computer Vision: CNN, детекция, сегментация",
+            "step_type": "theory",
+            "resources": [{"title": "Fast.ai", "url": "https://course.fast.ai"}],
+            "estimated_hours": 25,
+            "order": 2
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 10–12: Выход на рынок",
+        "description": "Портфолио, MLOps, стажировки",
+        "order": 3,
+        "steps": [
+          {
+            "title": "MLOps: Docker, MLflow, деплой модели",
+            "step_type": "theory",
+            "resources": [{"title": "MLflow Docs", "url": "https://mlflow.org/docs/latest/index.html"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "Pet-project: энд-ту-энд ML-проект",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 30,
+            "order": 1
+          },
+          {
+            "title": "Подготовка резюме Data Science / ML",
+            "step_type": "job_search",
+            "resources": [],
+            "estimated_hours": 10,
+            "order": 2
+          },
+          {
+            "title": "Отправить заявки на стажировки (Яндекс, Сбер, Тинькофф)",
+            "step_type": "job_search",
+            "resources": [{"title": "Яндекс Стажировки", "url": "https://yandex.ru/yaintern"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      }
+    ]
+  }
+]
