@@ -1,7 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_session
+from app.models.question import Question
 from app.schemas.quiz import (
     QuizStartOut,
     QuizAnswerIn,
@@ -16,6 +18,7 @@ from app.services.quiz_service import (
     save_answer,
     is_quiz_finished,
     ensure_user_progress,
+    finish_quiz as finish_quiz_service,
 )
 
 router = APIRouter(tags=["quiz"])
@@ -37,6 +40,10 @@ async def start_quiz(db: AsyncSession = Depends(get_session)):
         for opt in first_question.options
     ]
 
+    # Count total questions
+    count_result = await db.execute(select(Question))
+    total_qs = len(count_result.scalars().all())
+
     return QuizStartOut(
         session_id=session_id,
         first_question=QuestionOut(
@@ -45,6 +52,7 @@ async def start_quiz(db: AsyncSession = Depends(get_session)):
             question_type=first_question.question_type,
             options=options_out,
         ),
+        total_questions=total_qs,
     )
 
 
@@ -54,7 +62,7 @@ async def answer_question(
     db: AsyncSession = Depends(get_session),
 ):
     """Submit an answer and get the next question (or finish)."""
-    saved = await save_answer(payload.session_id, payload.question_id, payload.answers)
+    saved = await save_answer(db, payload.session_id, payload.question_id, payload.answers)
     if not saved:
         raise HTTPException(status_code=404, detail="Session not found")
 
@@ -93,10 +101,12 @@ async def finish_quiz(
         raise HTTPException(status_code=400, detail="session_id is required")
 
     result = await is_quiz_finished(db, session_id)
-    from app.services.quiz_service import quiz_sessions as qs
+    # Count answered questions from DB
+    from app.services.quiz_service import get_session_answers as get_answers
+    answers = await get_answers(db, session_id)
 
     return {
         "session_id": session_id,
         "finished": result,
-        "total_questions_answered": len(qs.get(session_id, {}).get("answers", {})),
+        "total_questions_answered": len(answers),
     }

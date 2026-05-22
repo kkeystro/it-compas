@@ -3,48 +3,49 @@
     "id": "frontend",
     "title": "Frontend-разработчик",
     "description": "Создаёт интерфейсы сайтов и веб-приложений. Работает с HTML, CSS, JavaScript и фреймворками.",
-    "market_coefficient": 1.2
+    "market_coefficient": 1.8
   },
   {
     "id": "backend",
     "title": "Backend-разработчик",
     "description": "Разрабатывает серверную часть приложений, работает с базами данных, API и бизнес-логикой.",
-    "market_coefficient": 1.2
+    "market_coefficient": 1.8
   },
   {
     "id": "data_science",
     "title": "Data Science / ML-инженер",
     "description": "Анализирует данные, строит модели машинного обучения, работает с большими данными.",
-    "market_coefficient": 1.1
+    "market_coefficient": 1.6
   },
   {
     "id": "devops",
     "title": "DevOps-инженер",
     "description": "Настраивает инфраструктуру, автоматизирует процессы развёртывания, работает с Docker и CI/CD.",
-    "market_coefficient": 1.1
+    "market_coefficient": 1.5
   },
   {
     "id": "ux_ui",
     "title": "UX/UI-дизайнер",
     "description": "Проектирует пользовательский опыт и визуальный интерфейс цифровых продуктов.",
-    "market_coefficient": 1.0
+    "market_coefficient": 1.3
   },
   {
     "id": "qa",
     "title": "QA / Тестировщик",
     "description": "Проверяет качество продукта, ищет баги, пишет тест-кейсы и автоматизирует тестирование.",
-    "market_coefficient": 0.9
+    "market_coefficient": 0.6
   },
   {
     "id": "analyst",
     "title": "Системный аналитик",
     "description": "Собирает и анализирует требования, проектирует архитектуру решений, работает между бизнесом и разработкой.",
-    "market_coefficient": 1.0
+    "market_coefficient": 0.9
   },
   {
     "id": "pm",
     "title": "Product Manager",
     "description": "Управляет созданием продукта: от идеи до релиза, работает с метриками и пользователями.",
-    "market_coefficient": 1.0
+    "market_coefficient": 1.1
   }
 ]
+

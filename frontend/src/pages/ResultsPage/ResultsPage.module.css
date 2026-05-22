@@ -1,0 +1,137 @@
+.container {
+  animation: fadeIn 0.3s ease;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: var(--space-4);
+}
+
+.emptyText {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.cardInfo {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-1);
+}
+
+.cardMatch {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.cardReason {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Progress bar inside card */
+.cardBar {
+  height: 8px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.cardBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), #7c3aed);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base) ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cardIcon {
+    width: 48px;
+    height: 48px;
+    font-size: 2rem;
+  }
+
+  .cardTitle {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .cards {
+    gap: var(--space-3);
+  }
+}
+

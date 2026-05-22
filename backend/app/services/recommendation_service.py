@@ -16,7 +16,7 @@ async def get_recommendations(
     db: AsyncSession, session_id: str
 ) -> List[RecommendationOut]:
     """Calculate and return top-3 recommendations."""
-    answers = get_session_answers(session_id)
+    answers = await get_session_answers(db, session_id)
     if not answers:
         return []
 

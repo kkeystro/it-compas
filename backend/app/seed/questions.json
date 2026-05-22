@@ -134,8 +134,9 @@
     ]
   },
   {
-    "question_text": "Оцени свой интерес к анализу данных и цифрам от 1 до 5",
-    "question_type": "scale",
+    "question_text": "Что из этого тебе ближе? (можно выбрать несколько)",
+    "question_type": "multiple_choice",
+
     "order": 6,
     "options": [
       {

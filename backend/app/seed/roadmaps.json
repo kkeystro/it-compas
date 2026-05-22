@@ -405,5 +405,730 @@
         ]
       }
     ]
+  },
+  {
+    "profession_id": "devops",
+    "stages": [
+      {
+        "title": "Месяцы 1–3: Основы Linux и сети",
+        "description": "Linux, командная строка, основы сетей",
+        "order": 0,
+        "steps": [
+          {
+            "title": "Linux: командная строка, файловая система, права доступа",
+            "step_type": "theory",
+            "resources": [{"title": "Linux Journey", "url": "https://linuxjourney.com"}, {"title": "RTFM: man pages", "url": "https://man7.org/linux/man-pages/"}],
+            "estimated_hours": 30,
+            "order": 0
+          },
+          {
+            "title": "Скриптинг на Bash: переменные, циклы, условия",
+            "step_type": "practice",
+            "resources": [{"title": "Bash Guide", "url": "https://mywiki.wooledge.org/BashGuide"}, {"title": "ExplainShell", "url": "https://explainshell.com"}],
+            "estimated_hours": 20,
+            "order": 1
+          },
+          {
+            "title": "Основы компьютерных сетей: OSI, TCP/IP, DNS, HTTP",
+            "step_type": "theory",
+            "resources": [{"title": "Book: Computer Networks (Tanenbaum)", "url": "https://www.amazon.com/Computer-Networks-Tanenbaum-5th/dp/0132126958"}, {"title": "Курс на Stepik", "url": "https://stepik.org/course/267"}],
+            "estimated_hours": 25,
+            "order": 2
+          },
+          {
+            "title": "Настройка рабочего окружения: Vim, tmux, SSH",
+            "step_type": "practice",
+            "resources": [{"title": "Vim Adventures", "url": "https://vim-adventures.com"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 4–6: Контейнеризация и CI/CD",
+        "description": "Docker, Docker Compose, GitLab CI",
+        "order": 1,
+        "steps": [
+          {
+            "title": "Docker: образы, контейнеры, Dockerfile, слои",
+            "step_type": "theory",
+            "resources": [{"title": "Docker Docs", "url": "https://docs.docker.com/get-started"}, {"title": "Play With Docker", "url": "https://labs.play-with-docker.com"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "Docker Compose: мультиконтейнерные приложения",
+            "step_type": "practice",
+            "resources": [{"title": "Docker Compose Docs", "url": "https://docs.docker.com/compose"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "CI/CD: GitLab CI / GitHub Actions",
+            "step_type": "theory",
+            "resources": [{"title": "GitLab CI Docs", "url": "https://docs.gitlab.com/ee/ci/"}, {"title": "GitHub Actions Docs", "url": "https://docs.github.com/en/actions"}],
+            "estimated_hours": 20,
+            "order": 2
+          },
+          {
+            "title": "Pet-project: контейнеризация веб-приложения с CI/CD",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 25,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 7–9: Оркестрация и облака",
+        "description": "Kubernetes, облачные провайдеры, мониторинг",
+        "order": 2,
+        "steps": [
+          {
+            "title": "Kubernetes: поды, сервисы, деплои, Ingress",
+            "step_type": "theory",
+            "resources": [{"title": "Kubernetes Docs", "url": "https://kubernetes.io/docs/tutorials/"}, {"title": "Minikube", "url": "https://minikube.sigs.k8s.io/docs/"}],
+            "estimated_hours": 30,
+            "order": 0
+          },
+          {
+            "title": "Облака: AWS / Yandex Cloud / Cloud.ru",
+            "step_type": "practice",
+            "resources": [{"title": "Yandex Cloud Tutorials", "url": "https://cloud.yandex.com/en/docs/tutorials"}, {"title": "AWS Free Tier", "url": "https://aws.amazon.com/free"}],
+            "estimated_hours": 20,
+            "order": 1
+          },
+          {
+            "title": "Мониторинг: Prometheus, Grafana, логи",
+            "step_type": "theory",
+            "resources": [{"title": "Prometheus Docs", "url": "https://prometheus.io/docs/introduction/overview/"}, {"title": "Grafana Tutorials", "url": "https://grafana.com/tutorials/"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Pet-project: деплой микросервиса в Kubernetes",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 30,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 10–12: IaC и выход на рынок",
+        "description": "Terraform, Ansible, подготовка к собеседованиям",
+        "order": 3,
+        "steps": [
+          {
+            "title": "IaC: Terraform, Ansible",
+            "step_type": "theory",
+            "resources": [{"title": "Terraform Docs", "url": "https://developer.hashicorp.com/terraform/docs"}, {"title": "Ansible Docs", "url": "https://docs.ansible.com/ansible/latest/index.html"}],
+            "estimated_hours": 25,
+            "order": 0
+          },
+          {
+            "title": "Собрать портфолио DevOps-проектов на GitHub",
+            "step_type": "milestone",
+            "resources": [],
+            "estimated_hours": 0,
+            "order": 1
+          },
+          {
+            "title": "Подготовка к DevOps-собеседованию",
+            "step_type": "job_search",
+            "resources": [{"title": "DevOps Interview Questions", "url": "https://github.com/bregman-arie/devops-exercises"}],
+            "estimated_hours": 20,
+            "order": 2
+          },
+          {
+            "title": "Отправить резюме на DevOps-стажировки",
+            "step_type": "job_search",
+            "resources": [{"title": "Яндекс Инфраструктура", "url": "https://yandex.ru/yaintern"}, {"title": "VK Cloud", "url": "https://vk.company/ru/vacancies"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profession_id": "ux_ui",
+    "stages": [
+      {
+        "title": "Месяцы 1–3: Основы дизайна",
+        "description": "Композиция, типографика, цвет, Figma",
+        "order": 0,
+        "steps": [
+          {
+            "title": "Основы дизайна: композиция, цвет, типографика",
+            "step_type": "theory",
+            "resources": [{"title": "Material Design Guidelines", "url": "https://m3.material.io"}, {"title": "Книга «Дизайн для недизайнеров»", "url": "https://www.ozon.ru/"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "Figma: интерфейс, компоненты, авто-лейаут",
+            "step_type": "practice",
+            "resources": [{"title": "Figma Learn", "url": "https://help.figma.com"}, {"title": "Figma для начинающих на YouTube", "url": "https://www.youtube.com"}],
+            "estimated_hours": 25,
+            "order": 1
+          },
+          {
+            "title": "Референсы и насмотренность: Dribbble, Behance",
+            "step_type": "practice",
+            "resources": [{"title": "Dribbble", "url": "https://dribbble.com"}, {"title": "Behance", "url": "https://behance.net"}],
+            "estimated_hours": 10,
+            "order": 2
+          },
+          {
+            "title": "Первый макет: лендинг в Figma",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 15,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 4–6: UX-исследования и прототипирование",
+        "description": "User Research, CJM, прототипы, тестирование",
+        "order": 1,
+        "steps": [
+          {
+            "title": "UX-исследования: интервью, опросы, Persona",
+            "step_type": "theory",
+            "resources": [{"title": "Nielsen Norman Group", "url": "https://www.nngroup.com"}, {"title": "Книга «Не заставляйте меня думать»", "url": "https://www.ozon.ru/"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "Customer Journey Map и User Flow",
+            "step_type": "practice",
+            "resources": [{"title": "Miro Templates", "url": "https://miro.com/templates"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "Интерактивные прототипы в Figma",
+            "step_type": "practice",
+            "resources": [{"title": "Figma Prototyping Guide", "url": "https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Юзабилити-тестирование и итерации",
+            "step_type": "practice",
+            "resources": [{"title": "UserTesting", "url": "https://www.usertesting.com"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 7–9: UI-киты и дизайн-системы",
+        "description": "Дизайн-системы, адаптивность, анимация",
+        "order": 2,
+        "steps": [
+          {
+            "title": "Дизайн-системы: Atomic Design, Storybook",
+            "step_type": "theory",
+            "resources": [{"title": "Atomic Design (Brad Frost)", "url": "https://atomicdesign.bradfrost.com"}, {"title": "Storybook", "url": "https://storybook.js.org"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "Адаптивный дизайн: mobile-first, breakpoints",
+            "step_type": "practice",
+            "resources": [{"title": "Responsive Web Design", "url": "https://developers.google.com/web/fundamentals/design-and-ux/responsive"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "Motion Design: Lottie, анимация интерфейсов",
+            "step_type": "theory",
+            "resources": [{"title": "LottieFiles", "url": "https://lottiefiles.com"}, {"title": "Material Motion", "url": "https://m3.material.io/motion"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Pet-project: редизайн существующего приложения",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 25,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 10–12: Портфолио и выход на рынок",
+        "description": "Портфолио, кейсы, фриланс, стажировки",
+        "order": 3,
+        "steps": [
+          {
+            "title": "Собрать портфолио на Behance / Dprofile",
+            "step_type": "milestone",
+            "resources": [{"title": "Behance", "url": "https://behance.net"}, {"title": "Dprofile", "url": "https://dprofile.ru"}],
+            "estimated_hours": 0,
+            "order": 0
+          },
+          {
+            "title": "Оформить кейсы: проблема → решение → результат",
+            "step_type": "practice",
+            "resources": [{"title": "Как оформлять кейсы", "url": "https://medium.com"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "Фриланс: первые заказы на биржах",
+            "step_type": "job_search",
+            "resources": [{"title": "Habr Freelance", "url": "https://freelance.habr.com"}, {"title": "Kwork", "url": "https://kwork.ru"}],
+            "estimated_hours": 20,
+            "order": 2
+          },
+          {
+            "title": "Отправить портфолио в дизайн-студии",
+            "step_type": "job_search",
+            "resources": [{"title": "Яндекс Дизайн", "url": "https://yandex.ru/jobs/design"}, {"title": "VK Дизайн", "url": "https://vk.company/ru/vacancies"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profession_id": "qa",
+    "stages": [
+      {
+        "title": "Месяцы 1–3: Основы тестирования",
+        "description": "Теория тестирования, баг-репорты, тест-кейсы",
+        "order": 0,
+        "steps": [
+          {
+            "title": "Теория тестирования: виды, уровни, техники",
+            "step_type": "theory",
+            "resources": [{"title": "ISTQB Glossary", "url": "https://istqb-main-web-prod.s3.amazonaws.com/media/ISTQB_CTFL_Syllabus_2018_v3.1.pdf"}, {"title": "Курс на Stepik", "url": "https://stepik.org/course/555"}],
+            "estimated_hours": 25,
+            "order": 0
+          },
+          {
+            "title": "Тест-кейсы, чек-листы, баг-репорты",
+            "step_type": "practice",
+            "resources": [{"title": "TestRail", "url": "https://www.testrail.com"}, {"title": "YouTrack / Jira", "url": "https://www.jetbrains.com/youtrack"}],
+            "estimated_hours": 20,
+            "order": 1
+          },
+          {
+            "title": "DevTools: инспектор, консоль, сеть",
+            "step_type": "practice",
+            "resources": [{"title": "Chrome DevTools Docs", "url": "https://developer.chrome.com/docs/devtools"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Тестирование реального сайта: поиск багов",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 4–6: Автоматизация на Python",
+        "description": "Selenium, pytest, API-тестирование",
+        "order": 1,
+        "steps": [
+          {
+            "title": "Python для тестировщика: pytest, фикстуры",
+            "step_type": "theory",
+            "resources": [{"title": "pytest Docs", "url": "https://docs.pytest.org"}, {"title": "Automate the Boring Stuff", "url": "https://automatetheboringstuff.com"}],
+            "estimated_hours": 25,
+            "order": 0
+          },
+          {
+            "title": "Selenium / Playwright: UI-автоматизация",
+            "step_type": "theory",
+            "resources": [{"title": "Playwright Docs", "url": "https://playwright.dev"}, {"title": "Selenium Docs", "url": "https://www.selenium.dev/documentation/"}],
+            "estimated_hours": 25,
+            "order": 1
+          },
+          {
+            "title": "API-тестирование: Postman, requests",
+            "step_type": "practice",
+            "resources": [{"title": "Postman Docs", "url": "https://learning.postman.com"}, {"title": "JSONPlaceholder для практики", "url": "https://jsonplaceholder.typicode.com"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Pet-project: автотесты для открытого API",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 20,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 7–9: Интеграционное тестирование",
+        "description": "CI/CD, нагрузочное тестирование, БД",
+        "order": 2,
+        "steps": [
+          {
+            "title": "Git, CI/CD integration: автотесты в пайплайне",
+            "step_type": "practice",
+            "resources": [{"title": "GitHub Actions для тестов", "url": "https://docs.github.com/en/actions/guides/about-continuous-integration"}],
+            "estimated_hours": 15,
+            "order": 0
+          },
+          {
+            "title": "Нагрузочное тестирование: Locust, JMeter",
+            "step_type": "theory",
+            "resources": [{"title": "Locust Docs", "url": "https://docs.locust.io"}, {"title": "JMeter Tutorial", "url": "https://jmeter.apache.org/usermanual/get-started.html"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "Тестирование БД: SQL-запросы, проверка данных",
+            "step_type": "practice",
+            "resources": [{"title": "PostgreSQL Exercises", "url": "https://pgexercises.com"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Pet-project: полный цикл тестирования веб-приложения",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 25,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 10–12: Выход на рынок QA",
+        "description": "Портфолио, сертификация, поиск работы",
+        "order": 3,
+        "steps": [
+          {
+            "title": "Собрать портфолио тест-кейсов и автотестов на GitHub",
+            "step_type": "milestone",
+            "resources": [],
+            "estimated_hours": 0,
+            "order": 0
+          },
+          {
+            "title": "Подготовка к ISTQB-сертификации",
+            "step_type": "theory",
+            "resources": [{"title": "ISTQB Syllabus", "url": "https://www.istqb.org/certification/certified-tester-foundation-level-ctfl.html"}],
+            "estimated_hours": 20,
+            "order": 1
+          },
+          {
+            "title": "Участие в тестировании open-source проектов",
+            "step_type": "hackathon",
+            "resources": [{"title": "GitHub Issues", "url": "https://github.com/issues"}],
+            "estimated_hours": 20,
+            "order": 2
+          },
+          {
+            "title": "Отправить резюме на QA-стажировки",
+            "step_type": "job_search",
+            "resources": [{"title": "Яндекс QA", "url": "https://yandex.ru/yaintern"}, {"title": "Тинькофф QA", "url": "https://fintech.tinkoff.ru/start/"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profession_id": "analyst",
+    "stages": [
+      {
+        "title": "Месяцы 1–3: Основы системного анализа",
+        "description": "Бизнес-процессы, требования, документация",
+        "order": 0,
+        "steps": [
+          {
+            "title": "Введение в системный анализ: роли, артефакты",
+            "step_type": "theory",
+            "resources": [{"title": "BABOK Guide", "url": "https://www.iiba.org/business-analysis-body-of-knowledge-babok/"}, {"title": "Курс на Stepik", "url": "https://stepik.org/course/118"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "Сбор и анализ требований: интервью, опросы",
+            "step_type": "practice",
+            "resources": [{"title": "Requirement Gathering Techniques", "url": "https://www.modernanalyst.com"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "Документирование: SRS, User Stories, Use Cases",
+            "step_type": "practice",
+            "resources": [{"title": "Confluence Templates", "url": "https://www.atlassian.com/software/confluence/templates"}],
+            "estimated_hours": 20,
+            "order": 2
+          },
+          {
+            "title": "Практика: написать SRS для pet-проекта",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 15,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 4–6: Моделирование и прототипирование",
+        "description": "UML, BPMN, прототипы, SQL",
+        "order": 1,
+        "steps": [
+          {
+            "title": "UML: диаграммы классов, последовательностей, activity",
+            "step_type": "theory",
+            "resources": [{"title": "PlantUML Guide", "url": "https://plantuml.com/guide"}, {"title": "Lucidchart", "url": "https://www.lucidchart.com"}],
+            "estimated_hours": 25,
+            "order": 0
+          },
+          {
+            "title": "BPMN: моделирование бизнес-процессов",
+            "step_type": "theory",
+            "resources": [{"title": "Camunda BPMN", "url": "https://camunda.com/bpmn/"}, {"title": "Draw.io", "url": "https://app.diagrams.net"}],
+            "estimated_hours": 20,
+            "order": 1
+          },
+          {
+            "title": "SQL для аналитика: JOIN, подзапросы, оконные функции",
+            "step_type": "practice",
+            "resources": [{"title": "SQL Zoo", "url": "https://sqlzoo.net"}, {"title": "Mode Analytics SQL Tutorial", "url": "https://mode.com/sql-tutorial/"}],
+            "estimated_hours": 25,
+            "order": 2
+          },
+          {
+            "title": "Прототипирование: Figma / Axure для аналитика",
+            "step_type": "practice",
+            "resources": [{"title": "Wireframing in Figma", "url": "https://help.figma.com/hc/en-us/articles/360041514474-Guide-to-wireframing"}],
+            "estimated_hours": 15,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 7–9: Работа с данными и API",
+        "description": "Аналитика данных, API-спецификации, метрики",
+        "order": 2,
+        "steps": [
+          {
+            "title": "Аналитика данных: pandas, Google Sheets, Looker",
+            "step_type": "theory",
+            "resources": [{"title": "Google Data Analytics Certificate", "url": "https://www.coursera.org/professional-certificates/google-data-analytics"}, {"title": "Looker Studio", "url": "https://lookerstudio.google.com"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "JSON, REST API: спецификации OpenAPI / Swagger",
+            "step_type": "practice",
+            "resources": [{"title": "Swagger Editor", "url": "https://editor.swagger.io"}, {"title": "Postman для аналитика", "url": "https://learning.postman.com"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "Метрики продукта: DAU, Retention, LTV, A/B тесты",
+            "step_type": "theory",
+            "resources": [{"title": "Product Metrics Guide", "url": "https://segment.com/academy/collecting-data/metrics-every-product-manager-needs-to-know/"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Pet-project: аналитика для вымышленного продукта",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 20,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 10–12: Выход на рынок",
+        "description": "Портфолио, сертификация, стажировки",
+        "order": 3,
+        "steps": [
+          {
+            "title": "Собрать портфолио: кейсы, спецификации, схемы",
+            "step_type": "milestone",
+            "resources": [],
+            "estimated_hours": 0,
+            "order": 0
+          },
+          {
+            "title": "Подготовка к собеседованию системного аналитика",
+            "step_type": "job_search",
+            "resources": [{"title": "System Analyst Interview", "url": "https://github.com/igorwojda/system-design-and-architecture"}],
+            "estimated_hours": 20,
+            "order": 1
+          },
+          {
+            "title": "Участие в профильных конференциях и митапах",
+            "step_type": "hackathon",
+            "resources": [{"title": "AnalystDays", "url": "https://analystdays.com"}, {"title": "Habr Meetups", "url": "https://habr.com/ru/companies/meetup/"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Отправить резюме на стажировки системного аналитика",
+            "step_type": "job_search",
+            "resources": [{"title": "Яндекс Аналитика", "url": "https://yandex.ru/yaintern"}, {"title": "Сбер Аналитика", "url": "https://sberbank.ru/career"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profession_id": "pm",
+    "stages": [
+      {
+        "title": "Месяцы 1–3: Основы управления продуктом",
+        "description": "Product Management, Agile, Scrum",
+        "order": 0,
+        "steps": [
+          {
+            "title": "Product Management 101: стратегия, roadmap, OKR",
+            "step_type": "theory",
+            "resources": [{"title": "Mind the Product", "url": "https://www.mindtheproduct.com"}, {"title": "Книга «Inspired» (Marty Cagan)", "url": "https://www.svpg.com/inspired/"}],
+            "estimated_hours": 25,
+            "order": 0
+          },
+          {
+            "title": "Agile и Scrum: роли, артефакты, церемонии",
+            "step_type": "theory",
+            "resources": [{"title": "Scrum Guide", "url": "https://scrumguides.org"}, {"title": "Atlassian Agile Coach", "url": "https://www.atlassian.com/agile"}],
+            "estimated_hours": 20,
+            "order": 1
+          },
+          {
+            "title": "Jira / YouTrack: управление задачами",
+            "step_type": "practice",
+            "resources": [{"title": "Jira Basics", "url": "https://www.atlassian.com/software/jira/guides/getting-started"}, {"title": "YouTrack Docs", "url": "https://www.jetbrains.com/help/youtrack"}],
+            "estimated_hours": 10,
+            "order": 2
+          },
+          {
+            "title": "Практика: составить Product Roadmap для своего проекта",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 4–6: Работа с требованиями и метриками",
+        "description": "User Stories, метрики, A/B тесты, аналитика",
+        "order": 1,
+        "steps": [
+          {
+            "title": "User Stories: INVEST, Acceptance Criteria, Story Mapping",
+            "step_type": "theory",
+            "resources": [{"title": "User Story Mapping (Jeff Patton)", "url": "https://www.jpattonassociates.com/user-story-mapping/"}, {"title": "Confluence для спецификаций", "url": "https://www.atlassian.com/software/confluence"}],
+            "estimated_hours": 20,
+            "order": 0
+          },
+          {
+            "title": "Метрики продукта: DAU, MAU, Retention, NPS, LTV",
+            "step_type": "theory",
+            "resources": [{"title": "Product Metrics Guide", "url": "https://segment.com/academy/collecting-data/metrics-every-product-manager-needs-to-know/"}],
+            "estimated_hours": 15,
+            "order": 1
+          },
+          {
+            "title": "A/B тесты: дизайн, анализ, выводы",
+            "step_type": "practice",
+            "resources": [{"title": "A/B Testing Guide", "url": "https://www.optimizely.com/optimization-glossary/ab-testing/"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Работа с данными: SQL, Google Analytics, Amplitude",
+            "step_type": "practice",
+            "resources": [{"title": "SQL Zoo", "url": "https://sqlzoo.net"}, {"title": "Amplitude Docs", "url": "https://www.docs.developers.amplitude.com"}],
+            "estimated_hours": 20,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 7–9: UI/UX и коммуникации",
+        "description": "Дизайн-мышление, переговоры, презентации",
+        "order": 2,
+        "steps": [
+          {
+            "title": "Дизайн-мышление: эмпатия, идеация, прототипирование",
+            "step_type": "theory",
+            "resources": [{"title": "Design Thinking (IDEO)", "url": "https://www.ideou.com/pages/design-thinking"}, {"title": "Stanford d.school", "url": "https://dschool.stanford.edu"}],
+            "estimated_hours": 15,
+            "order": 0
+          },
+          {
+            "title": "Figma для PM: макеты и прототипы на базовом уровне",
+            "step_type": "practice",
+            "resources": [{"title": "Figma для PM", "url": "https://www.figma.com/resource-library/product-managers/"}],
+            "estimated_hours": 10,
+            "order": 1
+          },
+          {
+            "title": "Навыки переговоров и презентаций для PM",
+            "step_type": "theory",
+            "resources": [{"title": "Harvard Negotiation Project", "url": "https://www.pon.harvard.edu"}, {"title": "Presentation Zen", "url": "https://www.presentationzen.com"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Практика: провести ретроспективу или стендап",
+            "step_type": "practice",
+            "resources": [],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "title": "Месяцы 10–12: Выход на рынок",
+        "description": "Портфолио, резюме, нетворкинг, стажировки",
+        "order": 3,
+        "steps": [
+          {
+            "title": "Собрать портфолио: кейсы, roadmap, презентации",
+            "step_type": "milestone",
+            "resources": [],
+            "estimated_hours": 0,
+            "order": 0
+          },
+          {
+            "title": "Подготовка к PM-собеседованию: кейсы, стратегия",
+            "step_type": "job_search",
+            "resources": [{"title": "Product Manager Interview Questions", "url": "https://www.productmanagerinterview.com"}, {"title": "Cracking the PM Interview", "url": "https://www.crackingthepminterview.com"}],
+            "estimated_hours": 20,
+            "order": 1
+          },
+          {
+            "title": "Нетворкинг: ProductTank, митапы, LinkedIn",
+            "step_type": "hackathon",
+            "resources": [{"title": "ProductTank Moscow", "url": "https://www.meetup.com/ProductTank-Moscow/"}, {"title": "LinkedIn Product Community", "url": "https://www.linkedin.com/groups/4230/"}],
+            "estimated_hours": 15,
+            "order": 2
+          },
+          {
+            "title": "Отправить резюме на Junior PM / APM стажировки",
+            "step_type": "job_search",
+            "resources": [{"title": "Яндекс APM", "url": "https://yandex.ru/yaintern"}, {"title": "Тинькофф PM", "url": "https://fintech.tinkoff.ru/start/"}, {"title": "Сбер APM", "url": "https://sberbank.ru/career"}],
+            "estimated_hours": 10,
+            "order": 3
+          }
+        ]
+      }
+    ]
   }
 ]

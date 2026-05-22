@@ -15,6 +15,7 @@ class StepOut(BaseModel):
     is_optional: bool
     estimated_hours: int
     order: int
+    completed: bool = False
 
     class Config:
         from_attributes = True

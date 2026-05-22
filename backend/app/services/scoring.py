@@ -40,15 +40,27 @@ async def calculate_scores(
                     if prof_id in scores:
                         scores[prof_id] += weight
 
-    # Apply market coefficient and prepare result
+    # Apply aggressive scoring: square raw scores then multiply by market coefficient
     results = []
     for prof in professions:
-        final_score = scores[prof.id] * prof.market_coefficient
+        raw = scores[prof.id]
+        # Squaring amplifies differences — a 2x lead becomes 4x
+        final_score = (raw ** 2) * prof.market_coefficient
         results.append((prof.id, final_score, prof.title, prof.market_coefficient))
+
+    # Normalize so top score = 100
+    if results:
+        max_score = max(x[1] for x in results)
+        if max_score > 0:
+            results = [
+                (pid, (score / max_score) * 100, title, coef)
+                for pid, score, title, coef in results
+            ]
 
     # Sort descending by score
     results.sort(key=lambda x: x[1], reverse=True)
     return results
+
 
 
 def generate_reason(profession_id: str, profession_title: str) -> str:

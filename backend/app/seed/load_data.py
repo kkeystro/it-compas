@@ -1,26 +1,28 @@
-"""Script to load seed data into the database."""
+"""Script to load seed data into the database (idempotent)."""
 
 import json
 import os
 from pathlib import Path
 
-from sqlalchemy import select
+from sqlalchemy import select, delete, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import async_session_factory, init_db
 from app.models.profession import Profession
 from app.models.question import Question, AnswerOption
 from app.models.roadmap import Stage, Step
+from app.models.progress import UserProgress, CompletedStep
 
 
 SEED_DIR = Path(__file__).parent
 
 
 async def load_professions(session: AsyncSession):
-    """Load professions from JSON."""
+    """Load professions from JSON (idempotent — skip if exists)."""
     with open(SEED_DIR / "professions.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    count_new = 0
     for item in data:
         existing = await session.execute(
             select(Profession).where(Profession.id == item["id"])
@@ -33,13 +35,21 @@ async def load_professions(session: AsyncSession):
                 market_coefficient=item.get("market_coefficient", 1.0),
             )
             session.add(prof)
+            count_new += 1
 
     await session.commit()
-    print(f"✅ Loaded {len(data)} professions")
+    print(f"✅ Loaded {count_new} new professions (total {len(data)})")
 
 
 async def load_questions(session: AsyncSession):
-    """Load questions with answer options from JSON."""
+    """Load questions with answer options from JSON (idempotent)."""
+    count_result = await session.execute(select(func.count()).select_from(Question))
+    existing_count = count_result.scalar()
+
+    if existing_count > 0:
+        print(f"⏭️  Questions already loaded ({existing_count}), skipping")
+        return
+
     with open(SEED_DIR / "questions.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -50,7 +60,7 @@ async def load_questions(session: AsyncSession):
             order=item.get("order", 0),
         )
         session.add(question)
-        await session.flush()  # to get question.id
+        await session.flush()
 
         for opt_data in item.get("options", []):
             option = AnswerOption(
@@ -65,19 +75,23 @@ async def load_questions(session: AsyncSession):
 
 
 async def load_roadmaps(session: AsyncSession):
-    """Load roadmaps from JSON."""
+    """Load roadmaps from JSON (idempotent — skip if stages exist)."""
     roadmaps_file = SEED_DIR / "roadmaps.json"
     if not roadmaps_file.exists():
         print("⚠️  No roadmaps.json found, skipping roadmap loading")
         return
 
+    count_result = await session.execute(select(func.count()).select_from(Stage))
+    if count_result.scalar() > 0:
+        print(f"⏭️  Roadmaps already loaded, skipping")
+        return
+
     with open(roadmaps_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    count = 0
+    total_steps = 0
     for roadmap in data:
         prof_id = roadmap.get("profession_id")
-        # Check profession exists
         prof_result = await session.execute(
             select(Profession).where(Profession.id == prof_id)
         )
@@ -106,16 +120,26 @@ async def load_roadmaps(session: AsyncSession):
                     order=step_data.get("order", 0),
                 )
                 session.add(step)
-                count += 1
+                total_steps += 1
 
     await session.commit()
-    print(f"✅ Loaded {count} steps across roadmaps")
+    print(f"✅ Loaded {total_steps} steps across {len(data)} roadmaps")
 
 
 async def load_all():
-    """Load all seed data."""
+    """Clean load: drop all data, then reload from seed files."""
     await init_db()
     async with async_session_factory() as session:
+        # Clean slate
+        await session.execute(delete(CompletedStep))
+        await session.execute(delete(Step))
+        await session.execute(delete(Stage))
+        await session.execute(delete(AnswerOption))
+        await session.execute(delete(Question))
+        await session.execute(delete(UserProgress))
+        await session.execute(delete(Profession))
+        await session.commit()
+
         await load_professions(session)
         await load_questions(session)
         await load_roadmaps(session)

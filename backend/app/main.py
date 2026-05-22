@@ -4,16 +4,18 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
-from app.database import init_db
+from app.database import init_db, async_session_factory
+from app.seed.load_data import load_all
 from app.api.quiz import router as quiz_router
 from app.api.recommendations import router as recommendations_router
 from app.api.roadmap import router as roadmap_router
 from app.api.progress import router as progress_router
+from app.api.auth import router as auth_router
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await init_db()
+    await load_all()
     yield
 
 
@@ -35,6 +37,7 @@ app.include_router(quiz_router, prefix=settings.API_V1_PREFIX)
 app.include_router(recommendations_router, prefix=settings.API_V1_PREFIX)
 app.include_router(roadmap_router, prefix=settings.API_V1_PREFIX)
 app.include_router(progress_router, prefix=settings.API_V1_PREFIX)
+app.include_router(auth_router, prefix=settings.API_V1_PREFIX)
 
 
 @app.get("/health")

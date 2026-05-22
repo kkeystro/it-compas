@@ -38,3 +38,4 @@ class QuizAnswerOut(BaseModel):
 class QuizStartOut(BaseModel):
     session_id: str
     first_question: QuestionOut
+    total_questions: int = 0

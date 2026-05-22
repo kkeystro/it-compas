@@ -1,0 +1,34 @@
+.main {
+  min-height: calc(100vh - var(--header-height) - 80px);
+  padding: var(--space-8) var(--space-6);
+  animation: fadeIn var(--transition-base) ease;
+}
+
+.wide {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.narrow {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    padding: var(--space-6) var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: var(--space-4) var(--space-3);
+  }
+}
+

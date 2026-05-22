@@ -1,0 +1,312 @@
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  animation: fadeIn 0.3s ease;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: var(--space-4);
+}
+
+.loadingText {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+/* Progress card */
+.progressCard {
+  margin-bottom: var(--space-8);
+}
+
+.progressStats {
+  text-align: center;
+  margin-top: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.hourStats {
+  text-align: center;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.nextStep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-primary-light);
+  border-radius: var(--radius-lg);
+}
+
+.nextLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.nextTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+/* Stages */
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.stageCard {
+  overflow: hidden;
+}
+
+.stageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  color: inherit;
+  padding: 0;
+  gap: var(--space-4);
+}
+
+.stageInfo {
+  flex: 1;
+}
+
+.stageTitle {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-1);
+}
+
+.stageDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.stageProgressCompact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.stagePercent {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+}
+
+.stageCount {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.chevron {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  transition: transform var(--transition-fast);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Stage body */
+.stageBody {
+  margin-top: var(--space-4);
+  animation: fadeIn 0.2s ease;
+}
+
+.stageProgressBar {
+  margin-bottom: var(--space-4);
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Step item */
+.stepItem {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-fast);
+}
+
+.stepDone {
+  opacity: 0.7;
+}
+
+.stepDone .stepHeader label {
+  text-decoration: line-through;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: flex-start;
+}
+
+.stepMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  margin-left: 30px;
+}
+
+.stepType {
+  font-size: var(--font-size-xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-medium);
+}
+
+.stepHours {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.stepResources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  margin-left: 30px;
+}
+
+.resourceLink {
+  font-size: var(--font-size-xs);
+  padding: 4px 10px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.resourceLink:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+/* Empty state */
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: var(--space-4);
+}
+
+.emptyTitle {
+  font-size: var(--font-size-2xl);
+  text-align: center;
+  margin-bottom: var(--space-2);
+}
+
+.emptyText {
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.5;
+  margin-bottom: var(--space-6);
+}
+
+.emptyButtons {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive — Mobile first */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .stageHeader {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .stageProgressCompact {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .stepMeta {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+
+  .stepResources {
+    margin-left: 0;
+  }
+
+  .stepItem {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .nextStep {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .stages {
+    gap: var(--space-3);
+  }
+
+  .stageProgressCompact {
+    gap: var(--space-1);
+  }
+}
+

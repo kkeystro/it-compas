@@ -20,7 +20,11 @@ from app.schemas.roadmap import (
 )
 
 
-async def get_roadmap(db: AsyncSession, profession_id: str) -> Optional[RoadmapOut]:
+async def get_roadmap(
+    db: AsyncSession,
+    profession_id: str,
+    completed_steps: Optional[set[int]] = None,
+) -> Optional[RoadmapOut]:
     """Get roadmap for a profession."""
     result = await db.execute(
         select(Profession)
@@ -45,6 +49,7 @@ async def get_roadmap(db: AsyncSession, profession_id: str) -> Optional[RoadmapO
                 is_optional=step.is_optional,
                 estimated_hours=step.estimated_hours,
                 order=step.order,
+                completed=step.id in completed_steps if completed_steps is not None else False,
             )
             for step in stage.steps
         ]
@@ -84,8 +89,8 @@ async def get_roadmap_with_progress(
     )
     completed_steps = {cs.step_id for cs in completed_result.scalars().all()}
 
-    # Get roadmap
-    roadmap = await get_roadmap(db, up.profession_id)
+    # Get roadmap with completed marks
+    roadmap = await get_roadmap(db, up.profession_id, completed_steps=completed_steps)
     if not roadmap:
         return None
 

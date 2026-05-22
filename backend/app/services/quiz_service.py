@@ -1,28 +1,29 @@
-"""Quiz service — handles quiz session logic."""
+"""Quiz service — handles quiz session logic with database persistence."""
 
+import json
 import uuid
 from typing import Dict, List
 
-from sqlalchemy import select
+from sqlalchemy import select, func
 from sqlalchemy.orm import selectinload
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.question import Question, AnswerOption
 from app.models.progress import UserProgress
-
-
-# In-memory storage for quiz sessions (MVP approach)
-# Stores session_id -> { question_order -> { question_id, selected_option_ids } }
-quiz_sessions: Dict[str, dict] = {}
+from app.models.quiz_session import QuizSession
 
 
 async def create_quiz_session(db: AsyncSession) -> str:
     """Create a new quiz session and return its ID."""
     session_id = str(uuid.uuid4())
-    quiz_sessions[session_id] = {
-        "current_question_order": 0,
-        "answers": {},  # question_id -> [option_ids]
-    }
+    session = QuizSession(
+        session_id=session_id,
+        current_question_order=0,
+        answers_json="{}",
+        finished=False,
+    )
+    db.add(session)
+    await db.commit()
     return session_id
 
 
@@ -47,62 +48,86 @@ async def get_question_by_order(db: AsyncSession, order: int):
     return result.scalar_one_or_none()
 
 
-
-async def save_answer(session_id: str, question_id: int, option_ids: List[int]):
+async def save_answer(db: AsyncSession, session_id: str, question_id: int, option_ids: List[int]):
     """Save user's answer for a question in the session."""
-    if session_id not in quiz_sessions:
+    result = await db.execute(
+        select(QuizSession).where(QuizSession.session_id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if not session:
         return False
 
-    quiz_sessions[session_id]["answers"][question_id] = option_ids
-    quiz_sessions[session_id]["current_question_order"] += 1
+    answers = json.loads(session.answers_json) if session.answers_json else {}
+    answers[str(question_id)] = option_ids
+    session.answers_json = json.dumps(answers)
+    session.current_question_order += 1
+    await db.commit()
     return True
 
 
 async def get_next_question(db: AsyncSession, session_id: str):
     """Get the next question for the session."""
-    if session_id not in quiz_sessions:
+    result = await db.execute(
+        select(QuizSession).where(QuizSession.session_id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if not session:
         return None
 
-    next_order = quiz_sessions[session_id]["current_question_order"]
+    next_order = session.current_question_order
     question = await get_question_by_order(db, next_order)
     return question
 
 
 async def is_quiz_finished(db: AsyncSession, session_id: str) -> bool:
     """Check if all questions have been answered."""
-    if session_id not in quiz_sessions:
+    result = await db.execute(
+        select(QuizSession).where(QuizSession.session_id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if not session:
         return True
 
     # Count total questions
-    result = await db.execute(select(Question))
-    total_questions = len(result.scalars().all())
+    count_result = await db.execute(select(func.count()).select_from(Question))
+    total_questions = count_result.scalar()
 
-    next_order = quiz_sessions[session_id]["current_question_order"]
-    return next_order >= total_questions
+    return session.current_question_order >= total_questions
 
 
-def get_session_answers(session_id: str) -> Dict[int, List[int]]:
+async def get_session_answers(db: AsyncSession, session_id: str) -> Dict[int, List[int]]:
     """Get all answers for a session: question_id -> [option_ids]."""
-    if session_id not in quiz_sessions:
+    result = await db.execute(
+        select(QuizSession).where(QuizSession.session_id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if not session or not session.answers_json:
         return {}
-    return quiz_sessions[session_id]["answers"]
+
+    raw = json.loads(session.answers_json)
+    return {int(k): v for k, v in raw.items()}
 
 
 async def finish_quiz(db: AsyncSession, session_id: str):
     """Mark quiz as finished for the session."""
-    if session_id not in quiz_sessions:
+    result = await db.execute(
+        select(QuizSession).where(QuizSession.session_id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if not session:
         return False
 
+    session.finished = True
+
     # Create user_progress record
-    result = await db.execute(
+    up_result = await db.execute(
         select(UserProgress).where(UserProgress.session_id == session_id)
     )
-    up = result.scalar_one_or_none()
-
+    up = up_result.scalar_one_or_none()
     if up:
         up.finished_quiz = True
-        await db.commit()
 
+    await db.commit()
     return True
 
 
@@ -121,3 +146,17 @@ async def ensure_user_progress(db: AsyncSession, session_id: str, profession_id:
         db.add(up)
         await db.commit()
     return up
+
+
+async def link_session_to_user(db: AsyncSession, session_id: str, user_id: int):
+    """Link an existing quiz session to a registered user."""
+    result = await db.execute(
+        select(QuizSession).where(QuizSession.session_id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if session:
+        session.user_id = user_id
+        await db.commit()
+        return True
+    return False
+
