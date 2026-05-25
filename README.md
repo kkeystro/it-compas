@@ -285,4 +285,8 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost/
 
 ## 📄 Лицензия
 
-Разработано в рамках ИТ-траектории. Все права защищены.
+Copyright © 2026 **IT-Track / Compas team**
+
+Этот проект распространяется под лицензией **GNU General Public License v3.0**.
+
+Вы можете свободно использовать, изменять и распространять этот код в соответствии с условиями GPL v3. Подробнее см. в файле [`LICENCE`](./LICENCE) или на [gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html).
