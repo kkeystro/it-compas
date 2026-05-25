@@ -37,11 +37,11 @@
       },
       {
         "text": "Средний уровень — могу написать небольшое приложение",
-        "weights": {"backend": 9, "frontend": 8, "data_science": 8, "devops": 7, "qa": 6, "analyst": 6, "ux_ui": 3, "pm": 3}
+        "weights": {"backend": 9, "frontend": 6, "data_science": 8, "devops": 7, "qa": 6, "analyst": 6, "ux_ui": 3, "pm": 3}
       },
       {
         "text": "Продвинутый — работал над реальными проектами",
-        "weights": {"backend": 8, "data_science": 9, "devops": 9, "frontend": 7, "qa": 5, "analyst": 5, "ux_ui": 2, "pm": 4}
+        "weights": {"backend": 8, "data_science": 9, "devops": 9, "frontend": 4, "qa": 5, "analyst": 5, "ux_ui": 2, "pm": 4}
       }
     ]
   },
@@ -134,8 +134,8 @@
     ]
   },
   {
-    "question_text": "Что из этого тебе ближе? (можно выбрать несколько)",
-    "question_type": "multiple_choice",
+    "question_text": "Как сильно ты любишь цифры и вычисления?",
+    "question_type": "single_choice",
 
     "order": 6,
     "options": [

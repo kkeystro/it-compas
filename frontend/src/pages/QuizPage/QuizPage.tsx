@@ -151,6 +151,7 @@ export function QuizPage() {
             max={state.totalQuestions}
             size="md"
             color="primary"
+            percentInside
             className={styles.progress}
           />
         </div>

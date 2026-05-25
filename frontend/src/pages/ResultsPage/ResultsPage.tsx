@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import { selectProfession } from '../../api/recommendations';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
+import { ProgressBar } from '../../components/ui/ProgressBar';
 import { PageContainer } from '../../components/layout/PageContainer';
 import { formatPercent } from '../../utils/format';
 import styles from './ResultsPage.module.css';
@@ -99,12 +100,13 @@ export function ResultsPage() {
                   </div>
                 </div>
                 <p className={styles.cardReason}>{rec.reason}</p>
-                <div className={styles.cardBar}>
-                  <div
-                    className={styles.cardBarFill}
-                    style={{ width: `${relativeScore}%` }}
-                  />
-                </div>
+                <ProgressBar
+                  value={relativeScore}
+                  max={100}
+                  size="md"
+                  color="primary"
+                  percentInside
+                />
                 <Button
                   variant="outline"
                   size="sm"

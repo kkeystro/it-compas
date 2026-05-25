@@ -25,6 +25,7 @@
   background: var(--color-bg-tertiary);
   border-radius: var(--radius-full);
   overflow: hidden;
+  position: relative;
 }
 
 .sm { height: 6px; }
@@ -32,6 +33,7 @@
 .lg { height: 14px; }
 
 .fill {
+  position: relative;
   height: 100%;
   border-radius: var(--radius-full);
   transition: width var(--transition-base) ease;
@@ -40,3 +42,17 @@
 .primary { background: var(--color-primary); }
 .secondary { background: var(--color-secondary); }
 .warning { background: var(--color-warning); }
+
+/* Percent label inside fill bar */
+.percentLabel {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  line-height: 1;
+  white-space: nowrap;
+}

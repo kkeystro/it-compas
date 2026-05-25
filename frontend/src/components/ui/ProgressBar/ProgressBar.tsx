@@ -6,6 +6,7 @@ interface ProgressBarProps {
   max?: number;
   label?: string;
   showPercent?: boolean;
+  percentInside?: boolean;
   size?: 'sm' | 'md' | 'lg';
   color?: 'primary' | 'secondary' | 'warning';
   className?: string;
@@ -16,6 +17,7 @@ export function ProgressBar({
   max = 100,
   label,
   showPercent = true,
+  percentInside = false,
   size = 'md',
   color = 'primary',
   className,
@@ -24,10 +26,10 @@ export function ProgressBar({
 
   return (
     <div className={cn(styles.wrapper, className)}>
-      {(label || showPercent) && (
+      {(label || (showPercent && !percentInside)) && (
         <div className={styles.header}>
           {label && <span className={styles.label}>{label}</span>}
-          {showPercent && (
+          {showPercent && !percentInside && (
             <span className={styles.percent}>{Math.round(percent)}%</span>
           )}
         </div>
@@ -42,7 +44,13 @@ export function ProgressBar({
         <div
           className={cn(styles.fill, styles[color])}
           style={{ width: `${percent}%` }}
-        />
+        >
+          {percentInside && (
+            <span className={styles.percentLabel}>
+              {Math.round(percent)}%
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );
