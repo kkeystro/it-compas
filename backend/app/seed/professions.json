@@ -3,7 +3,7 @@
     "id": "frontend",
     "title": "Frontend-разработчик",
     "description": "Создаёт интерфейсы сайтов и веб-приложений. Работает с HTML, CSS, JavaScript и фреймворками.",
-    "market_coefficient": 1.8
+    "market_coefficient": 1.6
   },
   {
     "id": "backend",
